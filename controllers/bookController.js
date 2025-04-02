@@ -61,6 +61,12 @@ function update (req, res) {
 function modify (req, res) {
     const id = parseInt(req.params.id);
     const currentBook = books.find((book) => book.id === id)
+    if(!currentBook){
+        res.status(404).json({
+            status: 404,
+            error: "Elemento non trovato"
+        })
+    }
     console.log(currentBook);
         if(req.body.title) {
             currentBook.title = req.body.title;
