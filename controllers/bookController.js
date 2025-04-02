@@ -1,7 +1,11 @@
 const books = require("../data/books.js");
 
 function index (req, res) {
-    res.json(books);
+    let filteredBooks = books;
+    if(req.query.author){
+        res.json(filteredBooks = books.filter((book) => book.author.includes(req.query.author)))
+    }
+    res.json(filteredBooks);
 }
 
 function show (req, res) {
