@@ -1,0 +1,43 @@
+Ciao a tutti!
+nome-repo: node-libreria
+Per consolidare i concetti legati a CRUD, REST, routing, controller e middleware con Express, vi propongo una breve esercitazione pratica in team.
+:dart: Obiettivo
+Costruire una semplice REST API per gestire una libreria di libri, applicando una struttura modulare e pulita del codice.
+:file_folder: Struttura consigliata del progetto
+node-library/
+├── controllers/
+│   └── bookController.js
+├── middlewares/
+│   ├── logger.js
+│   └── validateBook.js
+├── routes/
+│   └── bookRoutes.js
+├── data/
+│   └── books.json (mock DB)
+├── app.js
+:arrows_anticlockwise: Funzionalità richieste
+Implementare le seguenti rotte:
+GET /books → Elenco di tutti i libri
+GET /books/:id → Dettaglio di un libro
+POST /books → Creazione di un nuovo libro
+PUT /books/:id → Modifica di un libro esistente
+DELETE /books/:id → Eliminazione di un libro
+Ogni libro ha:
+{
+  "id": 1,
+  "title": "Il nome della rosa",
+  "author": "Umberto Eco",
+  "year": 1980,
+  "available": true
+}
+:toolbox: Middleware richiesti
+Logger: stampa in console metodo e URL per ogni richiesta
+Validazione: blocca POST e PUT se mancano title o author
+:sparkles: Bonus (facoltativi)
+Filtro per autore: GET /books?author=Eco
+Endpoint solo libri disponibili GET /books/available
+:white_tick: Cosa consegnare
+Progetto funzionante
+Collection Postman
+Codice organizzato e leggibile
+README con istruzioni di avvio e test del progetto :wink:
