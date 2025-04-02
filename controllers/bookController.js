@@ -10,6 +10,9 @@ function index (req, res) {
 
 function show (req, res) {
     const id = parseInt(req.params.id);
+    if(req.params.id === "available"){
+        res.json(books.filter((book) => book.available === true));
+    }
     const currentBook = books.find((book) => book.id === id);
     if(currentBook){
         res.json(currentBook);
